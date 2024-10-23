@@ -499,7 +499,7 @@ public with sharing class SOQLTest {
     }
 
     @IsTest
-    static void testGetAccountNameForContact() {
+    static void testx() {
         // Create test data
         Account testAccount1 = new Account(Name = 'Test Account 1');
         insert testAccount1;
