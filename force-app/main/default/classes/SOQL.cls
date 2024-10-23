@@ -52,12 +52,18 @@ public with sharing class SOQL {
      * Update/Uncomment the template code to create a method
      * Returns the Contact Id for all contacts with last name of Smith or Jones
      * @return A list of Contact Ids.
-     * Update the corresponding test class and testGetContactIdsByLastName method to cover this method
+     * Update the corresponding test class and 0i4oijroitestGetContactIdsByLastName method to cover this method
      */
-    //[public | private ] [static] data_type method_name (input parameters) {
-    //  The body of the method
-    //}
-
+    public static List<Id> getContactsByLastName(){
+        // Query to retrieve all contact Ids with last name of Smith or Jones
+    
+        List<Contact> contactNamedSmithOrJones = [SELECT Id, LastName FROM Contact WHERE LastName IN ('Smith', 'Jones')]; 
+        List<Id> contactIds = new List<Id>(); 
+        for(Contact contact : contactNamedSmithOrJones){
+            contactIds.add(contact.Id);
+        }
+        return contactIds;
+    }
     /**
      * Question 4
      * Update/Uncomment the template code to create a method
